@@ -1,5 +1,9 @@
 
 
+增加继承自 UIViewController与UITableViewController类的垃圾代码。
+
+
+
 使用说明:
  main.m文件最顶部参数设定，修改输出路径
 
@@ -16,24 +20,24 @@ NSString *outDirectory = @"/Users/zengchunjun/workspace/SDK_Tools/SpamCode2";
 - (void)addSpamCodeMethod
 {
     CFAbsoluteTime startTime =CFAbsoluteTimeGetCurrent();
-    
+  
     int random = 1234567;
     if (random % 2 == 0) { //没有必要调用
         [ASpamCode_Public main_X10_Call:@"ios" bmg_X12_:@"android"];
     }
-    
+  
     CFAbsoluteTime linkTime = (CFAbsoluteTimeGetCurrent() - startTime);
-    
+  
     NSLog(@"Linked in %f ms", linkTime *1000.0);
 }
 
 并在didFinishLaunchingWithOptions方法中调用
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
     
-    
-    
+  
     [self addSpamCodeMethod];//添加额外的code
-    
+  
     return YES;
 }
